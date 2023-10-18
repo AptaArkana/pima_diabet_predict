@@ -7,8 +7,8 @@ import numpy as np
 dir = Path(__file__).resolve()
 sys.path.append(dir.parent.parent)
 
-model_path = './models/pima_diabet_predict.pkl'  # Ubah ekstensi file menjadi .pkl
-scaler_path = './models/scaler.pkl'  # Ubah ekstensi file menjadi .pkl
+model_path = 'models/pima_diabet_predict.pkl'  # Ubah ekstensi file menjadi .pkl
+scaler_path = 'models/scaler.pkl'  # Ubah ekstensi file menjadi .pkl
 
 # Load model
 with open(model_path, 'rb') as m:
