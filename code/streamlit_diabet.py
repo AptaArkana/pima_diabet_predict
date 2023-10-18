@@ -4,7 +4,7 @@ import joblib as job
 import streamlit as st
 import numpy as np
 
-model_path = Path(__file__).parents[1] / 'code/models/pima_diabet_predict'
+model_path = Path(__file__).parents[1] / 'code/models/best_model.h5'
 scaler_path =Path(__file__).parents[1] / 'code/models/scaler'
 
 # Load model
