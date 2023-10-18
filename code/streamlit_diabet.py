@@ -57,7 +57,7 @@ if st.button('Test Prediksi Diabetes'):
     
     diabet_predict = diabet_model.predict(scaled_input_data)
 
-    if round(diabet_predict[0]) < 1:
+    if round(diabet_predict[0][0]) < 1:
         diabet_diagnosis = 'Pasien Tidak Terkena Diabetes'
     else:
         diabet_diagnosis = 'Pasien Terkena Diabetes'
