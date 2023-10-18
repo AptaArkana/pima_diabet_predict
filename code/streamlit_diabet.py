@@ -3,6 +3,7 @@ import sys
 import joblib as job
 import streamlit as st
 import numpy as np
+import keras
 
 model_path = Path(__file__).parents[1] / 'code/models/best_model.h5'
 scaler_path =Path(__file__).parents[1] / 'code/models/scaler'
