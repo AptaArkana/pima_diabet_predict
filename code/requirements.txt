@@ -7,4 +7,3 @@ keras
 tensorflow
 bayesian-optimization
 scikit-learn
-os
