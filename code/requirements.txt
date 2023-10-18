@@ -5,5 +5,5 @@ streamlit
 joblib
 keras
 tensorflow
-bayes_opt
+bayesian-optimization
 scikit-learn
