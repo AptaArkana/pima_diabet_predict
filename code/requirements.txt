@@ -7,3 +7,5 @@ keras
 tensorflow
 bayesian-optimization
 scikit-learn
+path
+sys
