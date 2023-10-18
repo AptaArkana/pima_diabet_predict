@@ -3,8 +3,8 @@ import streamlit as st
 import numpy as np
 
 # Load model
-diabet_model = job.load('pima_diabet_predict')
-sc = job.load('scaler')
+diabet_model = job.load('./models/pima_diabet_predict')
+sc = job.load('./models/scaler')
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
