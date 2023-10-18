@@ -1,14 +1,15 @@
-import os
+import path
+import sys
 import joblib as job
 import streamlit as st
 import numpy as np
 
-# Load model
-model_path = os.path.join('.', 'models', 'pima_diabet_predict')  # Atur jalur file dengan benar
-diabet_model = job.load(model_path)
+dir = path.Path(__file__).abspath()
+sys.path.append(dir.parent.parent)
 
-scaler_path = os.path.join('.', 'models', 'scaler')  # Atur jalur file dengan benar
-sc = job.load(scaler_path)
+# Load model
+diabet_model = job.load('./models/pima_diabet_predict')
+sc = job.load('./models/scaler')
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
