@@ -8,3 +8,4 @@ tensorflow
 bayesian-optimization
 scikit-learn
 path
+pathlib
