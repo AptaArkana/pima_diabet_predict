@@ -2,12 +2,9 @@ import joblib as job
 import streamlit as st
 import numpy as np
 
-#from sklearn.preprocessing import StandardScaler
-
-sc = job.load('scaler')
-
 # Load model
 diabet_model = job.load('pima_diabet_predict')
+sc = job.load('scaler')
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
@@ -56,5 +53,3 @@ if st.button('Test Prediksi Diabetes'):
         diabet_diagnosis = 'Pasien Terkena Diabetes'
 
     st.success(diabet_diagnosis)
-    st.success(diabet_predict[0][0])
-    st.success(scaled_input_data)
