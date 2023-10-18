@@ -4,7 +4,7 @@ import joblib as job
 import streamlit as st
 import numpy as np
 
-dir = Path(__file__).abspath()
+dir = Path(__file__).resolve()
 sys.path.append(dir.parent.parent)
 
 model_path = './models/pima_diabet_predict'
