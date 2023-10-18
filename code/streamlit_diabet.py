@@ -7,9 +7,16 @@ import numpy as np
 dir = path.Path(__file__).abspath()
 sys.path.append(dir.parent.parent)
 
+model_path = './models/pima_diabet_predict'
+scaler_path = './models/scaler'
+
 # Load model
-diabet_model = job.load('./models/pima_diabet_predict')
-sc = job.load('./models/scaler')
+with open (model_path, 'rb') as m:
+    diabet_model = job.load('./models/pima_diabet_predict')
+
+# Load scaler
+with open (scaler_path, 'rb') as s:
+    sc = job.load('./models/scaler')
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
