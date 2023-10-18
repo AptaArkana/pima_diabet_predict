@@ -9,7 +9,7 @@ scaler_path =Path(__file__).parents[1] / 'code/models/scaler'
 
 # Load model
 with open(model_path, 'rb') as m:
-    diabet_model = keras.models.load_model(h5_path)
+    diabet_model = keras.models.load_model(model_path)
 
 # Load scaler
 with open(scaler_path, 'rb') as s:
