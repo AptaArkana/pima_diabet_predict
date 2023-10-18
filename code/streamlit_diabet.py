@@ -4,7 +4,7 @@ import pickle
 import streamlit as st
 import numpy as np
 
-model_path = 'models/pima_diabet_predict.pkl'  # Ubah ekstensi file menjadi .pkl
+model_path = Path(__file__).parents[1] / 'code/models/Path(__file__).parents[1] / 'code/models/'
 scaler_path = 'models/scaler.pkl'  # Ubah ekstensi file menjadi .pkl
 
 # Load model
