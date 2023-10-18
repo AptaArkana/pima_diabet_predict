@@ -3,8 +3,11 @@ import streamlit as st
 import numpy as np
 
 # Load model
-diabet_model = job.load('.\models\pima_diabet_predict')
-sc = job.load('.\models\scaler')
+model_path = os.path.join('.', 'models', 'pima_diabet_predict')  # Atur jalur file dengan benar
+diabet_model = job.load(model_path)
+
+scaler_path = os.path.join('.', 'models', 'scaler')  # Atur jalur file dengan benar
+sc = job.load(scaler_path)
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
