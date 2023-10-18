@@ -1,19 +1,19 @@
 from pathlib import Path
 import sys
-import pickle
+import joblib as job
 import streamlit as st
 import numpy as np
 
-model_path = Path(__file__).parents[1] / 'code/models/pima_diabet_predict.pkl'
-scaler_path =Path(__file__).parents[1] / 'code/models/scaler.pkl'  # Ubah ekstensi file menjadi .pkl
+model_path = Path(__file__).parents[1] / 'code/models/pima_diabet_predict'
+scaler_path =Path(__file__).parents[1] / 'code/models/scaler'
 
 # Load model
 with open(model_path, 'rb') as m:
-    diabet_model = pickle.load(m)
+    diabet_model = job.load(m)
 
 # Load scaler
 with open(scaler_path, 'rb') as s:
-    sc = pickle.load(s)
+    sc = job.load(s)
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
