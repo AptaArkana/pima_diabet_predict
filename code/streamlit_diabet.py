@@ -1,22 +1,22 @@
-import path
+from pathlib import Path
 import sys
 import joblib as job
 import streamlit as st
 import numpy as np
 
-dir = path.Path(__file__).abspath()
+dir = Path(__file__).abspath()
 sys.path.append(dir.parent.parent)
 
 model_path = './models/pima_diabet_predict'
 scaler_path = './models/scaler'
 
 # Load model
-with open (model_path, 'rb') as m:
-    diabet_model = job.load('./models/pima_diabet_predict')
+with open(model_path, 'rb') as m:
+    diabet_model = job.load(model_path)
 
 # Load scaler
-with open (scaler_path, 'rb') as s:
-    sc = job.load('./models/scaler')
+with open(scaler_path, 'rb') as s:
+    sc = job.load(scaler_path)
 
 # Title web
 st.title('Sistem Prediksi Diabetes')
@@ -49,7 +49,7 @@ diabet_diagnosis = ''
 # Button prediksi
 if st.button('Test Prediksi Diabetes'):
     # Create an input array from user inputs
-    input_data = np.array([Pregnancies, Glucose, BloodPressure, BMI, DiabetesPedigreeFunction, Age])
+    input_data = np.array([float(Pregnancies), float(Glucose), float(BloodPressure), float(BMI), float(DiabetesPedigreeFunction), float(Age)])
 
     # Reshape the input data to the shape expected by the scaler (1 sample with 6 features)
     input_data = input_data.reshape(1, -1)
@@ -59,7 +59,7 @@ if st.button('Test Prediksi Diabetes'):
     
     diabet_predict = diabet_model.predict(scaled_input_data)
 
-    if round(diabet_predict[0][0]) < 1:
+    if round(diabet_predict[0]) < 1:
         diabet_diagnosis = 'Pasien Tidak Terkena Diabetes'
     else:
         diabet_diagnosis = 'Pasien Terkena Diabetes'
